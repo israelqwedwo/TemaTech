@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welding & Fabrication Engineering - Tema Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Course Detail Page Specific Styles */
+        .course-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding: 15rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .course-hero h1 {
+            color: white;
+            -webkit-text-fill-color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin: 0 0.5rem 1rem;
+            font-weight: 500;
+        }
+        
+        .course-meta-bar {
+            background: white;
+            box-shadow: var(--shadow-md);
+            padding: 1.5rem 0;
+            /* position: sticky; */
+            top: 100px;
+            z-index: 99;
+        }
+        
+        .meta-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .meta-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .meta-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-item .label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .meta-item .value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .course-content-section {
+            padding: 4rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .main-content h2 {
+            margin: 2rem 0 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .main-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .main-content ul, .main-content ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .main-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 200px;
+            align-self: start;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        .info-card h3 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-list i {
+            color: var(--primary);
+            width: 20px;
+            margin-top: 3px;
+        }
+        
+        .fee-structure {
+            background: var(--sky-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+        
+        .fee-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .cta-box {
+            background: var(--gradient-blue);
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box .btn {
+            background: white;
+            color: var(--primary);
+            margin: 0.5rem;
+        }
+        
+        .cta-box .btn:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .course-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">Tema<span>Tech</span></a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../campus-life.html">Campus Life</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+            <section class="course-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),  url('/Images/welding/ap21215744189302-1062d24f18d24277484fa84f684fba0b51f58d6e-s1100-c50.jpg'); background-size: 100%; background-position: center; background-attachment: fixed; animation: heroZoom 13s ease-in-out infinite alternate;">
+        <div class="container">
+            <h1>Welding & Fabrication Engineering Technology</h1>
+            <p style="max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.9);">Master modern welding techniques including arc, MIG, TIG welding, and metal fabrication for structural and industrial applications.</p>
+            <span class="course-badge"><i class="fas fa-graduation-cap"></i> NABPTEX Accredited</span>
+            <span class="course-badge"><i class="fas fa-clock"></i> 3 Years</span>
+        </div>
+    </section>
+
+    <!-- Course Meta Bar -->
+    <section class="course-meta-bar">
+        <div class="container">
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="label">Duration</div>
+                    <div class="value">3 Years</div>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-certificate"></i>
+                    <div class="label">Certificate</div>
+                    <div class="value">NABPTEX I & II</div>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-users"></i>
+                    <div class="label">Class Size</div>
+                    <div class="value">20 Students</div>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="label">Start Date</div>
+                    <div class="value">Sept 2026</div>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-credit-card"></i>
+                    <div class="label">Tuition</div>
+                    <div class="value">Free SHS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="course-content-section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Column - Main Content -->
+                <div class="main-content">
+                    <h2>Course Overview</h2>
+                    <p>The Welding and Fabrication Engineering Technology program provides comprehensive training in all major welding processes and metal fabrication techniques. Students learn to work with various metals including mild steel, stainless steel, and aluminum, producing high-quality welded joints and fabricated structures for industrial, commercial, and residential applications.</p>
+                    <p>From basic arc welding to advanced TIG welding, the curriculum covers all essential skills needed for a career in welding and metal fabrication. Blueprint reading, metallurgy, quality control, and safety practices are integral parts of the training. Graduates will be prepared for careers in construction, manufacturing, shipbuilding, pipeline welding, and structural fabrication.</p>
+
+                    <!-- Course Gallery Section -->
+<div class="course-gallery">
+    <h3>Our Facilities & Training</h3>
+    <div class="gallery-simple-grid featured">
+        <div class="gallery-simple-item">
+            <img src="/Images/welding/4-RW-operator.jpg" alt="Main Workshop">
+            <div class="caption">
+                <p>Main Workshop</p>
+                <small>Fully equipped with modern tools</small>
+            </div>
+        </div>
+        <div class="gallery-simple-item">
+            <img src="/Images/welding/african-american-man-focused-on-600nw-2361921099.webp" alt="Training">
+            <div class="caption">
+                <p>Hands-on Training</p>
+            </div>
+        </div>
+        <div class="gallery-simple-item">
+            <img src="/Images/welding/black-male-welder-blue-jumpsuit-works-metal_681298-4843.jpg" alt="Equipment">
+            <div class="caption">
+                <p>Modern Equipment</p>
+            </div>
+        </div>
+        <div class="gallery-simple-item">
+            <img src="/Images/welding/istockphoto-1430147126-612x612.jpg" alt="Components">
+            <div class="caption">
+                <p>Condusive Environment</p>
+            </div>
+        </div>
+        <div class="gallery-simple-item">
+            <img src="/Images/welding/Welder-resize.jpg" alt="Circuit Work">
+            <div class="caption">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+                    
+                    <h2>What You Will Learn</h2>
+                    <ul>
+                        <li><strong>Safety in Welding:</strong> Personal protective equipment (PPE), workshop safety, ventilation requirements, fire prevention, and safe handling of welding equipment and gases.</li>
+                        <li><strong>Arc Welding (SMAW):</strong> Shielded Metal Arc Welding techniques, electrode selection, polarity, arc striking, bead running, and welding in various positions (flat, horizontal, vertical, overhead).</li>
+                        <li><strong>MIG Welding (GMAW):</strong> Gas Metal Arc Welding, wire feed systems, shielding gas selection, parameter setting, and applications for thin and thick materials.</li>
+                        <li><strong>TIG Welding (GTAW):</strong> Gas Tungsten Arc Welding, tungsten electrode preparation, filler rod selection, and precision welding of stainless steel, aluminum, and other non-ferrous metals.</li>
+                        <li><strong>Oxy-fuel Cutting:</strong> Setup and operation of oxy-acetylene equipment, cutting techniques, beveling, gouging, and piercing.</li>
+                        <li><strong>Plasma Cutting:</strong> Manual and mechanized plasma cutting, parameter selection, and cutting various thicknesses and materials.</li>
+                        <li><strong>Fabrication Techniques:</strong> Layout, marking, cutting, forming, bending, rolling, and assembly of metal components.</li>
+                        <li><strong>Blueprint Reading:</strong> Interpreting engineering drawings, welding symbols, fabrication details, and material specifications.</li>
+                        <li><strong>Metallurgy:</strong> Understanding metal properties, heat treatment, weldability of different metals, and effects of welding on material properties.</li>
+                        <li><strong>Quality Control:</strong> Weld inspection techniques, visual inspection, destructive testing, non-destructive testing (NDT), and weld defect identification.</li>
+                        <li><strong>Pipe Welding:</strong> Techniques for welding pipes in various positions, pipe fitting, and code requirements.</li>
+                        <li><strong>Structural Welding:</strong> Welding of beams, columns, trusses, and structural connections according to building codes.</li>
+                    </ul>
+                    
+                    <h2>Practical Training</h2>
+                    <p>Students spend extensive time in our welding bay, which features multiple welding stations equipped with modern welding machines. Practical exercises include:</p>
+                    <ul>
+                        <li>Basic weld beads and practice plates in all positions</li>
+                        <li>Butt joints, lap joints, T-joints, and corner joints</li>
+                        <li>Fabrication projects including gates, railings, frames, and structural components</li>
+                        <li>Pipe welding exercises in various positions</li>
+                        <li>Aluminum and stainless steel welding practice</li>
+                        <li>Cutting and beveling exercises with oxy-fuel and plasma</li>
+                        <li>Weld testing and inspection exercises</li>
+                        <li>Final project: Complete fabricated structure (gate, frame, or equipment)</li>
+                    </ul>
+                    
+                    <h2>Entry Requirements</h2>
+                    <ul>
+                        <li>Basic Education Certificate Examination (BECE) with minimum aggregate as set by the Ghana Education Service</li>
+                        <li>Good passes in English, Mathematics, and Integrated Science</li>
+                        <li>Physical fitness and good hand-eye coordination</li>
+                        <li>Attention to detail and safety consciousness</li>
+                    </ul>
+                    
+                    <h2>Career Opportunities</h2>
+                    <p>Qualified welders and fabricators are in high demand across numerous industries:</p>
+                    <ul>
+                        <li><strong>Structural Welder:</strong> Working on building construction, bridges, and structural steel projects</li>
+                        <li><strong>Pipe Welder:</strong> Welding pipelines for oil, gas, water, and industrial applications</li>
+                        <li><strong>Fabricator:</strong> Manufacturing metal products, equipment, and structures in workshops</li>
+                        <li><strong>Maintenance Welder:</strong> Repairing and maintaining equipment in factories and plants</li>
+                        <li><strong>Underwater Welder:</strong> Specialized welding for offshore and marine applications (with additional certification)</li>
+                        <li><strong>Shipyard Welder:</strong> Working on ship construction and repair</li>
+                        <li><strong>Automotive Welder:</strong> Custom fabrication and repair in the automotive industry</li>
+                        <li><strong>Welding Inspector:</strong> Quality control and inspection of welded structures</li>
+                        <li><strong>Welding Instructor:</strong> Teaching welding skills in technical institutions</li>
+                        <li><strong>Self-employed:</strong> Starting your own welding and fabrication business</li>
+                    </ul>
+                    
+                    <h2>Industries Hiring Welders</h2>
+                    <ul>
+                        <li><strong>Construction:</strong> Building construction, bridges, infrastructure projects</li>
+                        <li><strong>Manufacturing:</strong> Metal product manufacturing, equipment fabrication</li>
+                        <li><strong>Oil and Gas:</strong> Pipeline construction, refinery maintenance</li>
+                        <li><strong>Mining:</strong> Equipment repair and maintenance, structural work</li>
+                        <li><strong>Shipbuilding and Marine:</strong> Ship construction, repair, and maintenance</li>
+                        <li><strong>Automotive:</strong> Custom fabrication, repair shops</li>
+                        <li><strong>Aerospace:</strong> Aircraft maintenance and repair (with additional certification)</li>
+                        <li><strong>Agriculture:</strong> Equipment repair, custom fabrication</li>
+                    </ul>
+                    
+                    <h2>Certification and Advancement</h2>
+                    <p>Graduates can pursue additional certifications to enhance their careers:</p>
+                    <ul>
+                        <li>Certified Welder credentials from recognized bodies</li>
+                        <li>Specialized certifications in pipe welding, TIG welding, or structural welding</li>
+                        <li>Welding Inspector certification</li>
+                        <li>Advanced Diploma in Welding Engineering</li>
+                        <li>Underwater welding certification</li>
+                    </ul>
+                    
+                    <h2>Modern Welding Technology</h2>
+                    <p>Our program introduces students to modern welding technologies including:</p>
+                    <ul>
+                        <li>Inverter-based welding machines</li>
+                        <li>Pulsed MIG and TIG welding</li>
+                        <li>Automated welding systems</li>
+                        <li>Robotic welding (introduction)</li>
+                        <li>Laser cutting and welding (demonstration)</li>
+                    </ul>
+                </div>
+                
+                <!-- Right Column - Sidebar -->
+                <div class="sidebar">
+                    <!-- Quick Info Card -->
+                    <div class="info-card">
+                        <h3>Quick Info</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-tag"></i> <strong>Course Code:</strong> WFT106</li>
+                            <li><i class="fas fa-clock"></i> <strong>Duration:</strong> 3 Years</li>
+                            <li><i class="fas fa-calendar"></i> <strong>Semesters:</strong> 6 Semesters</li>
+                            <li><i class="fas fa-language"></i> <strong>Language:</strong> English</li>
+                            <li><i class="fas fa-clock"></i> <strong>Class Schedule:</strong> Full-time (Mon-Thu, 8am-3pm)</li>
+                            <li><i class="fas fa-users"></i> <strong>Class Size:</strong> 20 max</li>
+                            <li><i class="fas fa-building"></i> <strong>Campus:</strong> Main Campus</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Fee Structure -->
+                    <div class="info-card">
+                        <h3>Fee Structure (Per Year)</h3>
+                        <div class="fee-structure">
+                            <div class="fee-item">
+                                <span>Registration Fee</span>
+                                <span>GHS 350</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Tuition (per semester)</span>
+                                <span>GHS 1,100</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Practical/Lab Fee</span>
+                                <span>GHS 600</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Examination Fee</span>
+                                <span>GHS 150</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Materials & Consumables</span>
+                                <span>GHS 500</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Safety Equipment</span>
+                                <span>GHS 300</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Total First Year</span>
+                                <span>GHS 2,900</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1rem;">* Fees subject to change. Includes welding consumables for training.</p>
+                    </div>
+                    
+                    <!-- Workshop Equipment -->
+                    <div class="info-card">
+                        <h3>Workshop Facilities</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-check"></i> Arc Welding Machines (AC/DC)</li>
+                            <li><i class="fas fa-check"></i> MIG Welding Machines</li>
+                            <li><i class="fas fa-check"></i> TIG Welding Machines (AC/DC)</li>
+                            <li><i class="fas fa-check"></i> Oxy-acetylene Cutting Sets</li>
+                            <li><i class="fas fa-check"></i> Plasma Cutters</li>
+                            <li><i class="fas fa-check"></i> Welding Booths (12 stations)</li>
+                            <li><i class="fas fa-check"></i> Fume Extraction System</li>
+                            <li><i class="fas fa-check"></i> Plate Rolls & Bending Brakes</li>
+                            <li><i class="fas fa-check"></i> Guillotine Shears</li>
+                            <li><i class="fas fa-check"></i> Grinders & Finishing Tools</li>
+                        </ul>
+                    </div>
+
+                    <!-- Workshop Image -->
+                    <div class="info-card" style="padding: 0; overflow: hidden;">
+                        <img src="/Images/welding/4-RW-operator.jpg" alt="Electrical Workshop" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 1rem;">
+                            <p style="margin: 0; font-weight: 500;">Modern Workshop</p>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Fully equipped with industry-standard equipment</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Download Brochure -->
+                    <div class="info-card">
+                        <h3>Course Materials</h3>
+                        <p>Download the detailed course brochure for complete information about curriculum and workshop facilities.</p>
+                        <a href="#" class="btn btn-secondary" style="width: 100%; margin-bottom: 1rem;"><i class="fas fa-download"></i> Download Brochure</a>
+                        <a href="#" class="btn btn-secondary" style="width: 100%;"><i class="fas fa-calendar-alt"></i> Welding Safety Manual</a>
+                    </div>
+                    
+                    <!-- Apply Now CTA -->
+                    <div class="cta-box">
+                        <h3>Start Your Welding Career</h3>
+                        <p>Skilled welders are in high demand worldwide. Apply now for the next intake.</p>
+                        <a href="../contact.html" class="btn btn-primary">Apply Now</a>
+                        <a href="../contact.html" class="btn">Request Info</a>
+                    </div>
+                    
+                    <!-- Related Courses -->
+                    <!-- <div class="info-card">
+                        <h3>Related Courses</h3>
+                        <ul class="info-list">
+                            <li><a href="mechanical.html" style="color: var(--primary); text-decoration: none;">Mechanical Engineering</a></li>
+                            <li><a href="industrial-mechanics.html" style="color: var(--primary); text-decoration: none;">Industrial Mechanics</a></li>
+                            <li><a href="fabrication.html" style="color: var(--primary); text-decoration: none;">Advanced Fabrication</a></li>
+                            <li><a href="automobile.html" style="color: var(--primary); text-decoration: none;">Automobile Engineering</a></li>
+                        </ul>
+                    </div> -->
+                    
+                    <!-- Industry Partners -->
+                    <div class="info-card">
+                        <h3>Industry Partners</h3>
+                        <p>Our welding program is supported by:</p>
+                        <ul class="info-list">
+                            <li>Construction Companies</li>
+                            <li>Metal Fabrication Workshops</li>
+                            <li>Mining Companies</li>
+                            <li>Shipbuilding and Repair Yards</li>
+                            <li>Oil and Gas Companies</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Certification -->
+                    <div class="info-card">
+                        <h3>Professional Recognition</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-certificate"></i> NABPTEX Accredited</li>
+                            <li><i class="fas fa-certificate"></i> TVET Certified</li>
+                            <li><i class="fas fa-certificate"></i> Industry Recognized Certification</li>
+                            <li><i class="fas fa-certificate"></i> Welding Procedure Qualification</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Career Prospects -->
+                    <div class="info-card">
+                        <h3>Salary Expectations</h3>
+                        <ul class="info-list">
+                            <li><strong>Entry Level:</strong> GHS 1,500 - 2,500/month</li>
+                            <li><strong>Experienced:</strong> GHS 3,000 - 5,000/month</li>
+                            <li><strong>Specialized (Pipe/Underwater):</strong> GHS 6,000+/month</li>
+                            <li><strong>International Opportunities:</strong> Significantly higher</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Tema<span style="color: var(--secondary);">Tech</span></div>
+                    <p>Committed to excellence in education for over 62 years. Nurturing minds, building character, shaping futures.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/tematech"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/tematech_media/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Our Courses</a></li>
+                        <li><a href="campus-life.html">Campus Life</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Near GTP, Heavy Industrial Area, Tema, Ghana</p>
+                    <p><i class="fas fa-phone"></i>+233 500 676 167</p>
+                    <p><i class="fas fa-envelope"></i> tematechinst.cbt@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tema Technical Intitute. All Rights Reserved. | Designed for Educational Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="../script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

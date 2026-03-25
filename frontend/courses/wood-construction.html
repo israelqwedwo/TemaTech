@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wood Construction Engineering - Tema Tech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Course Detail Page Specific Styles */
+        .course-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding: 15rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .course-hero h1 {
+            color: white;
+            -webkit-text-fill-color: white;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .course-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            margin: 0 0.5rem 1rem;
+            font-weight: 500;
+        }
+        
+        .course-meta-bar {
+            background: white;
+            box-shadow: var(--shadow-md);
+            padding: 1.5rem 0;
+            /* position: sticky; */
+            top: 100px;
+            z-index: 99;
+        }
+        
+        .meta-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .meta-item {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        
+        .meta-item i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .meta-item .label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .meta-item .value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .course-content-section {
+            padding: 4rem 0;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .main-content h2 {
+            margin: 2rem 0 1rem;
+            color: var(--primary-dark);
+        }
+        
+        .main-content h2:first-child {
+            margin-top: 0;
+        }
+        
+        .main-content ul, .main-content ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .main-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar {
+            position: sticky;
+            top: 200px;
+            align-self: start;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 2rem;
+        }
+        
+        .info-card h3 {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .info-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-list i {
+            color: var(--primary);
+            width: 20px;
+            margin-top: 3px;
+        }
+        
+        .fee-structure {
+            background: var(--sky-light);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed rgba(0,0,0,0.1);
+        }
+        
+        .fee-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .cta-box {
+            background: var(--gradient-blue);
+            color: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .cta-box h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box .btn {
+            background: white;
+            color: var(--primary);
+            margin: 0.5rem;
+        }
+        
+        .cta-box .btn:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+            }
+            
+            .course-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="../index.html" class="logo">Tema<span>Tech</span></a>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                    <li><a href="../courses.html">Courses</a></li>
+                    <li><a href="../campus-life.html">Campus Life</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+            <section class="course-hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),  url('/Images/wood-construction/skillful-african-american-carpenter-precision-markings-wood-factory_1034537-93174.jpg'); background-size: cover; background-position: center; background-attachment: fixed; animation: heroZoom 13s ease-in-out infinite alternate;">
+        <div class="container">
+            <h1>Wood Construction Engineering Technology</h1>
+            <p style="max-width: 700px; margin: 0 auto; color: rgba(255,255,255,0.9);">Master carpentry, furniture making, and woodworking techniques for construction, cabinetry, and fine woodworking.</p>
+            <span class="course-badge"><i class="fas fa-graduation-cap"></i> NABPTEX Accredited</span>
+            <span class="course-badge"><i class="fas fa-clock"></i> 3 Years</span>
+        </div>
+    </section>
+
+    <!-- Course Meta Bar -->
+    <section class="course-meta-bar">
+        <div class="container">
+            <div class="meta-grid">
+                <div class="meta-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="label">Duration</div>
+                    <div class="value">3 Years</div>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-certificate"></i>
+                    <div class="label">Certificate</div>
+                    <div class="value">NABPTEX I & II</div>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-users"></i>
+                    <div class="label">Class Size</div>
+                    <div class="value">20 Students</div>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="label">Start Date</div>
+                    <div class="value">Sept 2026</div>
+                </div>
+                <div class="meta-item">
+                    <i class="fas fa-credit-card"></i>
+                    <div class="label">Tuition</div>
+                    <div class="value">Free SHS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="course-content-section">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Column - Main Content -->
+                <div class="main-content">
+                    <h2>Course Overview</h2>
+                    <p>The Wood Construction Engineering Technology program focuses on all aspects of working with wood, from rough carpentry to fine furniture making. Students learn to use both hand tools and power tools safely and effectively while developing skills in joinery, furniture design, and construction methods. The curriculum covers timber selection, wood properties, joinery techniques, furniture construction, and finishing.</p>
+                    <p>This comprehensive program prepares graduates for careers in carpentry, furniture making, cabinet making, and woodworking. Students develop both traditional craftsmanship skills and modern woodworking techniques, enabling them to work in construction, furniture manufacturing, or to start their own woodworking business.</p>
+
+                    <!-- Course Gallery Section -->
+<div class="course-gallery">
+    <h3>Our Facilities & Training</h3>
+    <div class="gallery-simple-grid featured">
+        <div class="gallery-simple-item">
+            <img src="/Images/wood-construction/1000_F_487188521_s64P8njQEUaw4vcyUXpijKd44qqheasT.jpg" alt="Main Workshop">
+            <div class="caption">
+                <p>Main Workshop</p>
+                <small>Fully equipped with modern tools</small>
+            </div>
+        </div>
+        <div class="gallery-simple-item">
+            <img src="/Images/wood-construction/360_F_553279828_PAHQ7Ylg3YwyoS1PsRWG5HkXAc2oYdYx.jpg" alt="Training">
+            <div class="caption">
+                <p>Hands-on Training</p>
+            </div>
+        </div>
+        <div class="gallery-simple-item">
+            <img src="/Images/wood-construction/black-man-carpenter-face-arms-crossed-workshop-wood-work-trade-confident-workplace-pride-portrait-carpentry-313435582.webp" alt="Equipment">
+            <div class="caption">
+                <p>Modern Equipment</p>
+            </div>
+        </div>
+        <div class="gallery-simple-item">
+            <img src="/Images/wood-construction/iPKSQD8zK5Z2jW8XVbnnHb-970-80.jpg"alt="Components">
+            <div class="caption">
+                <p>Condusive Environment</p>
+            </div>
+        </div>
+        <div class="gallery-simple-item">
+            <img src="/Images/wood-construction/portrait-african-american-male-carpenter-600nw-2263436427.webp" alt="Circuit Work">
+            <div class="caption">
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+                    
+                    <h2>What You Will Learn</h2>
+                    <ul>
+                        <li><strong>Wood Science:</strong> Understanding wood properties, timber species, moisture content, wood defects, and timber selection for different applications.</li>
+                        <li><strong>Hand Tools:</strong> Selection, use, and maintenance of hand tools including saws, planes, chisels, marking tools, and measuring instruments.</li>
+                        <li><strong>Power Tools:</strong> Safe operation of portable power tools including circular saws, jigsaws, routers, planers, sanders, and drills.</li>
+                        <li><strong>Woodworking Machinery:</strong> Operation of stationary machinery including table saws, band saws, planers, thicknessers, spindle moulders, and lathes.</li>
+                        <li><strong>Joinery Techniques:</strong> Various wood joints including butt joints, lap joints, mortise and tenon, dovetail joints, finger joints, and bridle joints.</li>
+                        <li><strong>Furniture Making:</strong> Design and construction of tables, chairs, cabinets, wardrobes, beds, and other furniture pieces.</li>
+                        <li><strong>Construction Carpentry:</strong> Framing techniques for walls, floors, and roofs. Installation of doors, windows, and staircases.</li>
+                        <li><strong>Cabinet Making:</strong> Construction of kitchen cabinets, built-in wardrobes, and storage units including drawer construction and door fitting.</li>
+                        <li><strong>Finishing:</strong> Sanding techniques, surface preparation, staining, varnishing, lacquering, painting, and waxing.</li>
+                        <li><strong>Design and Drawing:</strong> Furniture design principles, workshop drawings, cutting lists, and material estimation.</li>
+                        <li><strong>Upholstery Basics:</strong> Introduction to upholstery techniques for chairs and sofas.</li>
+                        <li><strong>Wood Turning:</strong> Using wood lathes to create turned components like table legs, spindles, and decorative items.</li>
+                        <li><strong>Veneering and Inlay:</strong> Application of veneers and decorative inlay techniques.</li>
+                        <li><strong>Workshop Safety:</strong> Safe working practices, dust extraction, personal protective equipment, and workshop organization.</li>
+                    </ul>
+                    
+                    <h2>Practical Training</h2>
+                    <p>Students receive extensive hands-on practice in our well-equipped wood workshop:</p>
+                    <ul>
+                        <li>Exercises in using all hand tools and power tools</li>
+                        <li>Practice cutting various wood joints</li>
+                        <li>Construction of small projects (stools, shelves, small tables)</li>
+                        <li>Building full-size furniture pieces (chairs, tables, cabinets)</li>
+                        <li>Wood turning exercises on lathes</li>
+                        <li>Finishing practice with various techniques</li>
+                        <li>Reading and working from workshop drawings</li>
+                        <li>Final project: Design and construct a complete furniture piece or wooden structure</li>
+                    </ul>
+                    
+                    <h2>Entry Requirements</h2>
+                    <ul>
+                        <li>Basic Education Certificate Examination (BECE) with minimum aggregate as set by the Ghana Education Service</li>
+                        <li>Good passes in English, Mathematics, and Integrated Science</li>
+                        <li>Interest in working with wood and hands-on activities</li>
+                        <li>Attention to detail and creativity</li>
+                    </ul>
+                    
+                    <h2>Career Opportunities</h2>
+                    <p>Graduates of this program can work in various roles including:</p>
+                    <ul>
+                        <li><strong>Carpenter:</strong> Working in construction, building houses, installing doors, windows, and roofing</li>
+                        <li><strong>Furniture Maker:</strong> Designing and building custom furniture pieces</li>
+                        <li><strong>Cabinet Maker:</strong> Constructing kitchen cabinets, wardrobes, and built-in furniture</li>
+                        <li><strong>Woodworker:</strong> Creating wooden products, decorative items, and custom pieces</li>
+                        <li><strong>Construction Carpenter:</strong> Specializing in framing, formwork, and structural carpentry</li>
+                        <li><strong>Shop Fitter:</strong> Installing shop fittings, displays, and commercial interiors</li>
+                        <li><strong>Kitchen Installer:</strong> Installing kitchen units and worktops</li>
+                        <li><strong>Joinery Workshop Technician:</strong> Working in joinery workshops producing doors, windows, and staircases</li>
+                        <li><strong>Furniture Restorer:</strong> Repairing and restoring antique and modern furniture</li>
+                        <li><strong>Self-employed:</strong> Starting your own carpentry or furniture making business</li>
+                        <li><strong>Woodworking Instructor:</strong> Teaching woodworking skills in institutions</li>
+                    </ul>
+                    
+                    <h2>Industries Hiring Woodworkers</h2>
+                    <ul>
+                        <li><strong>Construction Industry:</strong> Building companies, construction sites</li>
+                        <li><strong>Furniture Manufacturing:</strong> Factories producing furniture</li>
+                        <li><strong>Joinery Workshops:</strong> Companies producing doors, windows, and staircases</li>
+                        <li><strong>Cabinet Making Shops:</strong> Custom cabinet and kitchen manufacturers</li>
+                        <li><strong>Interior Design Firms:</strong> Creating custom interiors and fittings</li>
+                        <li><strong>Property Development:</strong> Finishing and fitting new properties</li>
+                        <li><strong>Hotel and Hospitality:</strong> Maintaining and creating furniture for hotels</li>
+                        <li><strong>Educational Institutions:</strong> Maintaining school furniture and facilities</li>
+                        <li><strong>Museums and Heritage Sites:</strong> Restoring historic wooden structures and furniture</li>
+                    </ul>
+                    
+                    <h2>Specializations</h2>
+                    <p>Graduates can develop expertise in specialized areas:</p>
+                    <ul>
+                        <li><strong>Fine Furniture Making:</strong> High-end custom furniture</li>
+                        <li><strong>Architectural Joinery:</strong> Staircases, paneling, custom moldings</li>
+                        <li><strong>Musical Instrument Making:</strong> Guitars, drums, other instruments</li>
+                        <li><strong>Boat Building:</strong> Wooden boat construction and repair</li>
+                        <li><strong>Wood Carving and Sculpture:</strong> Artistic wood creations</li>
+                        <li><strong>Timber Frame Construction:</strong> Traditional timber frame buildings</li>
+                        <li><strong>Conservation and Restoration:</strong> Restoring historic wooden artifacts</li>
+                    </ul>
+                    
+                    <h2>Further Studies</h2>
+                    <p>After completing this program, students can pursue:</p>
+                    <ul>
+                        <li>Advanced Diploma in Wood Technology</li>
+                        <li>Higher National Diploma (HND) in Furniture Design and Production</li>
+                        <li>Specialized courses in cabinet making, furniture design, or wood finishing</li>
+                        <li>Business management courses for starting your own workshop</li>
+                    </ul>
+                    
+                    <h2>Modern Woodworking Technology</h2>
+                    <p>Our program introduces students to modern woodworking technologies:</p>
+                    <ul>
+                        <li>CNC woodworking machines (introduction)</li>
+                        <li>Dust extraction systems</li>
+                        <li>Modern adhesives and fasteners</li>
+                        <li>Portable power tools and accessories</li>
+                        <li>Finishing equipment (spray guns, HVLP systems)</li>
+                        <li>Woodworking software for design and cutting lists</li>
+                    </ul>
+                </div>
+                
+                <!-- Right Column - Sidebar -->
+                <div class="sidebar">
+                    <!-- Quick Info Card -->
+                    <div class="info-card">
+                        <h3>Quick Info</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-tag"></i> <strong>Course Code:</strong> WCM109</li>
+                            <li><i class="fas fa-clock"></i> <strong>Duration:</strong> 3 Years</li>
+                            <li><i class="fas fa-calendar"></i> <strong>Semesters:</strong> 6 Semesters</li>
+                            <li><i class="fas fa-language"></i> <strong>Language:</strong> English</li>
+                            <li><i class="fas fa-clock"></i> <strong>Class Schedule:</strong> Full-time (Mon-Thu, 8am-3pm)</li>
+                            <li><i class="fas fa-users"></i> <strong>Class Size:</strong> 20 max</li>
+                            <li><i class="fas fa-building"></i> <strong>Campus:</strong> Main Campus</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Fee Structure -->
+                    <div class="info-card">
+                        <h3>Fee Structure (Per Year)</h3>
+                        <div class="fee-structure">
+                            <div class="fee-item">
+                                <span>Registration Fee</span>
+                                <span>GHS 350</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Tuition (per semester)</span>
+                                <span>GHS 1,100</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Practical/Lab Fee</span>
+                                <span>GHS 450</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Examination Fee</span>
+                                <span>GHS 150</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Materials & Timber</span>
+                                <span>GHS 500</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Safety Equipment</span>
+                                <span>GHS 200</span>
+                            </div>
+                            <div class="fee-item">
+                                <span>Total First Year</span>
+                                <span>GHS 2,750</span>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 1rem;">* Fees subject to change. Includes timber and materials for projects.</p>
+                    </div>
+                    
+                    <!-- Workshop Equipment -->
+                    <div class="info-card">
+                        <h3>Workshop Facilities</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-check"></i> Table Saws</li>
+                            <li><i class="fas fa-check"></i> Band Saws</li>
+                            <li><i class="fas fa-check"></i> Planers and Thicknessers</li>
+                            <li><i class="fas fa-check"></i> Spindle Moulders</li>
+                            <li><i class="fas fa-check"></i> Wood Lathes</li>
+                            <li><i class="fas fa-check"></i> Mortising Machines</li>
+                            <li><i class="fas fa-check"></i> Sanders (Disc, Belt, Drum)</li>
+                            <li><i class="fas fa-check"></i> Dust Extraction System</li>
+                            <li><i class="fas fa-check"></i> Complete Set of Hand Tools</li>
+                            <li><i class="fas fa-check"></i> Portable Power Tools</li>
+                            <li><i class="fas fa-check"></i> Assembly Benches</li>
+                            <li><i class="fas fa-check"></i> Finishing Booth</li>
+                        </ul>
+                    </div>
+
+                    <!-- Workshop Image -->
+                    <div class="info-card" style="padding: 0; overflow: hidden;">
+                        <img src="/Images/wood-construction/black-man-carpenter-face-arms-crossed-workshop-wood-work-trade-confident-workplace-pride-portrait-carpentry-313435582.webp" alt="Electrical Workshop" style="width: 100%; height: 200px; object-fit: cover;">
+                        <div style="padding: 1rem;">
+                            <p style="margin: 0; font-weight: 500;">Modern Workshop</p>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Fully equipped with industry-standard equipment</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Download Brochure -->
+                    <div class="info-card">
+                        <h3>Course Materials</h3>
+                        <p>Download the detailed course brochure for complete information about curriculum and workshop facilities.</p>
+                        <a href="#" class="btn btn-secondary" style="width: 100%; margin-bottom: 1rem;"><i class="fas fa-download"></i> Download Brochure</a>
+                        <a href="#" class="btn btn-secondary" style="width: 100%;"><i class="fas fa-calendar-alt"></i> Woodworking Safety Guide</a>
+                    </div>
+                    
+                    <!-- Apply Now CTA -->
+                    <div class="cta-box">
+                        <h3>Start Your Woodworking Career</h3>
+                        <p>Skilled woodworkers are always in demand. Apply now for the next intake.</p>
+                        <a href="../contact.html" class="btn btn-primary">Apply Now</a>
+                        <a href="../contact.html" class="btn">Request Info</a>
+                    </div>
+                    
+                    <!-- Related Courses -->
+                    <!-- <div class="info-card">
+                        <h3>Related Courses</h3>
+                        <ul class="info-list">
+                            <li><a href="building-construction.html" style="color: var(--primary); text-decoration: none;">Building Construction</a></li>
+                            <li><a href="furniture-design.html" style="color: var(--primary); text-decoration: none;">Furniture Design</a></li>
+                            <li><a href="finishing.html" style="color: var(--primary); text-decoration: none;">Wood Finishing</a></li>
+                            <li><a href="carpentry.html" style="color: var(--primary); text-decoration: none;">Advanced Carpentry</a></li>
+                        </ul>
+                    </div>
+                     -->
+                    <!-- Industry Partners -->
+                    <div class="info-card">
+                        <h3>Industry Partners</h3>
+                        <p>Our woodworking program is supported by:</p>
+                        <ul class="info-list">
+                            <li>Ghana Furniture Makers Association</li>
+                            <li>Woodworkers Association of Ghana</li>
+                            <li>Timber Industry Development Division</li>
+                            <li>Furniture Retailers</li>
+                            <li>Construction Companies</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Certification -->
+                    <div class="info-card">
+                        <h3>Professional Recognition</h3>
+                        <ul class="info-list">
+                            <li><i class="fas fa-certificate"></i> NABPTEX Accredited</li>
+                            <li><i class="fas fa-certificate"></i> TVET Certified</li>
+                            <li><i class="fas fa-certificate"></i> Forestry Commission Recognized</li>
+                            <li><i class="fas fa-certificate"></i> Industry Skills Certification</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Career Prospects -->
+                    <div class="info-card">
+                        <h3>Salary Expectations</h3>
+                        <ul class="info-list">
+                            <li><strong>Entry Level:</strong> GHS 1,200 - 2,000/month</li>
+                            <li><strong>Experienced Carpenter:</strong> GHS 2,500 - 4,000/month</li>
+                            <li><strong>Master Furniture Maker:</strong> GHS 4,000 - 6,000/month</li>
+                            <li><strong>Self-employed:</strong> Income varies based on projects and clientele</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Student Projects -->
+                    <div class="info-card">
+                        <h3>Student Projects</h3>
+                        <p>Students complete projects including:</p>
+                        <ul class="info-list">
+                            <li>Dining chairs and tables</li>
+                            <li>Bedroom furniture (beds, wardrobes, nightstands)</li>
+                            <li>Kitchen cabinets</li>
+                            <li>Office furniture</li>
+                            <li>Custom shelving units</li>
+                            <li>Wooden doors and windows</li>
+                            <li>Decorative items and gifts</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+ <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Tema<span style="color: var(--secondary);">Tech</span></div>
+                    <p>Committed to excellence in education for over 62 years. Nurturing minds, building character, shaping futures.</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/tematech"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/tematech_media/"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Our Courses</a></li>
+                        <li><a href="campus-life.html">Campus Life</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Admissions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Near GTP, Heavy Industrial Area, Tema, Ghana</p>
+                    <p><i class="fas fa-phone"></i>+233 500 676 167</p>
+                    <p><i class="fas fa-envelope"></i> tematechinst.cbt@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tema Technical Intitute. All Rights Reserved. | Designed for Educational Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="../script.js"></script>
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

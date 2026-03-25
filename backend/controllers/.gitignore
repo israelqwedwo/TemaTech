@@ -1,0 +1,36 @@
+# Backend
+backend/node_modules/
+backend/.env
+backend/submissions/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node modules
+node_modules/
+backend/node_modules/
+
+# Environment files
+.env
+backend/.env
+
+# Submissions
+submissions/
+backend/submissions/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
