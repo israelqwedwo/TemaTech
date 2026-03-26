@@ -1021,3 +1021,9 @@ footer {
     background-image: none !important;   /* remove if duplicate */
   }
 }
+
+.hamburger {
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;   /* Removes blue highlight on iOS */
+}

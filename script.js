@@ -1,16 +1,24 @@
 // ===== SHARED JAVASCRIPT FOR ALL PAGES =====
 
-// Mobile Menu Toggle
+// Mobile Menu Toggle - Fixed for iOS Safari + Android
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     
     if (hamburger && navLinks) {
-        hamburger.addEventListener('click', () => {
+        
+        // Use both click and touchstart for better iOS support
+        const toggleMenu = () => {
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
+        };
+
+        hamburger.addEventListener('click', toggleMenu);
+        hamburger.addEventListener('touchstart', (e) => {
+            e.preventDefault();     // Prevents issues on iOS
+            toggleMenu();
         });
-        
+
         // Close menu when clicking a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
