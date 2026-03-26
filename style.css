@@ -1006,3 +1006,18 @@ footer {
         width: 100%;
     }
 }
+
+/* Add this at the bottom of style.css */
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;           /* prevents extra space */
+  object-fit: cover;
+}
+
+/* Hide any duplicate if you have background + img */
+@media (max-width: 768px) {
+  .hero {
+    background-image: none !important;   /* remove if duplicate */
+  }
+}
