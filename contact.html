@@ -40,92 +40,90 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" style="padding: 4rem 0;">
-        <div class="container">
-            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem;">
-                <!-- Contact Information -->
-                <div class="contact-info-card" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-md);">
-                    <h3 style="margin-bottom: 1.5rem; color: var(--primary-dark);">Get in Touch</h3>
-                    <p style="margin-bottom: 2rem; color: var(--text-medium);">Have questions about our programs? Want to schedule a campus tour? We're here to help!</p>
-                    
-                    <div class="contact-item" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                        <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: var(--primary); min-width: 40px;"></i>
-                        <div>
-                            <strong style="display: block; margin-bottom: 0.3rem;">Visit Us</strong>
-                            <p style="color: var(--text-light);">Near GTP, Heavy Industrial Area, Tema, Ghana</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                        <i class="fas fa-phone" style="font-size: 1.5rem; color: var(--primary); min-width: 40px;"></i>
-                        <div>
-                            <strong style="display: block; margin-bottom: 0.3rem;">Call Us</strong>
-                            <p style="color: var(--text-light);">+233 500 676 167</p>
-                              <!-- <br>+233 987 654 321</p> -->
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                        <i class="fas fa-envelope" style="font-size: 1.5rem; color: var(--primary); min-width: 40px;"></i>
-                        <div>
-                            <strong style="display: block; margin-bottom: 0.3rem;">Email Us</strong>
-                            <p style="color: var(--text-light);">tematechinst.cbt@gmail.com</p>
-                              <!-- <br>info@dtiafrica.com</p> -->
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item" style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                        <i class="fas fa-clock" style="font-size: 1.5rem; color: var(--primary); min-width: 40px;"></i>
-                        <div>
-                            <strong style="display: block; margin-bottom: 0.3rem;">Office Hours</strong>
-                            <p style="color: var(--text-light);">Monday - Friday: 8:00 AM - 5:00 Pm</p>
-                        </div>
+<!-- Contact Section -->
+<section class="contact-section" style="padding: 4rem 0;">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info-card">
+                <h3>Get in Touch</h3>
+                <p>Have questions about our programs? Want to schedule a campus tour? We're here to help!</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <strong>Visit Us</strong>
+                        <p>Near GTP, Heavy Industrial Area, Tema, Ghana</p>
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
-                <div class="contact-form" style="background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow-lg);">
-                    <h3 style="margin-bottom: 2rem; color: var(--primary-dark);">Send us a Message</h3>
-                    <form id="contactForm" action="/api/email/send" method="POST">
-                        <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name *</label>
-                            <input type="text" id="name" name="name" class="form-control" required style="width: 100%; padding: 1rem; border: 2px solid var(--light-gray); border-radius: 10px;">
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Email Address *</label>
-                            <input type="email" id="email" name="email" class="form-control" required style="width: 100%; padding: 1rem; border: 2px solid var(--light-gray); border-radius: 10px;">
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label for="phone" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" class="form-control" style="width: 100%; padding: 1rem; border: 2px solid var(--light-gray); border-radius: 10px;">
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 1.5rem;">
-                            <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Subject *</label>
-                            <select id="subject" name="subject" class="form-control" required style="width: 100%; padding: 1rem; border: 2px solid var(--light-gray); border-radius: 10px;">
-                                <option value="">Select a subject</option>
-                                <option value="admissions">Admissions Inquiry</option>
-                                <option value="courses">Course Information</option>
-                                <option value="tour">Campus Tour</option>
-                                <option value="fees">Fees & Financial Aid</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        
-                        <div class="form-group" style="margin-bottom: 2rem;">
-                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Message *</label>
-                            <textarea id="message" name="message" class="form-control" rows="5" required style="width: 100%; padding: 1rem; border: 2px solid var(--light-gray); border-radius: 10px; resize: vertical;"></textarea>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">Send Message</button>
-                    </form>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Call Us</strong>
+                        <p>+233 500 676 167</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <strong>Email Us</strong>
+                        <p>tematechinst.cbt@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <strong>Office Hours</strong>
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                    </div>
                 </div>
             </div>
+            
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h3>Send us a Message</h3>
+                <form id="contactForm" action="/api/email/send" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="admissions">Admissions Inquiry</option>
+                            <option value="courses">Course Information</option>
+                            <option value="tour">Campus Tour</option>
+                            <option value="fees">Fees & Financial Aid</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
 
             
